@@ -1,0 +1,24 @@
+﻿<Controls:MetroWindow x:Class="WizardApplication.WizardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="New Monoberry Project" Height="450" Width="652" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Canvas Name="wizardHost" HorizontalAlignment="Left" Height="369" Margin="10,10,0,0" VerticalAlignment="Top" Width="626"/>
+        <Button Content="Finish" Name="FinishButton" HorizontalAlignment="Left" Margin="479,384,0,0" VerticalAlignment="Top" Width="75" Command="{Binding WizardVM.FinishWizardCommand}" Click="FinishButton_Click" IsEnabled="{Binding Path=WizardVM.IsOnLastStep}"/>
+        <Button Content="Next" HorizontalAlignment="Left" Margin="399,384,0,0" VerticalAlignment="Top" Width="75" Command="{Binding WizardVM.MoveNextCommand}"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="319,384,0,0" VerticalAlignment="Top" Width="75" Command="{Binding WizardVM.MovePreviousCommand}"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="559,384,0,0" VerticalAlignment="Top" Width="75" Command="{Binding WizardVM.CancelCommand}"/>
+    </Grid>
+</Controls:MetroWindow>

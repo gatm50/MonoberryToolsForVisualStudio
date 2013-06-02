@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WizardApplication.View.WelcomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="300" Width="400">
+    <Grid>
+        <Label Content="Introduction" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.105,0.231" FontWeight="Bold" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="380"><Run Language="es-es" Text="This wizard will guide you through setting up your development environment to create applications and delopy them to your Blackberry device."/></TextBlock>
+        <Label Content="Device Setup" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Span Language="en-us"><Run Text="Configure the connection to a simulator or devices over USB or Wi-Fi."/></Span></TextBlock>
+        <Label Content="SDK Setup" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.105,0.077" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Span Language="en-us"><Run Text="Configure the SDK to work."/></Span><LineBreak/><Run Text=""/></TextBlock>
+        <Label Content="Application Information and Permissions" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Span Language="en-us"><Run Text="Configure relevant information about the application and the permission in the Device."/></Span></TextBlock>
+    </Grid>
+</UserControl>

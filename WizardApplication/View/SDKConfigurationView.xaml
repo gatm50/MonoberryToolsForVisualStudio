@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WizardApplication.View.SDKConfigurationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="300" Width="400">
+    <Grid>
+        <Label Content="SDK:" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="49,139,0,0" VerticalAlignment="Top" Width="247" 
+                  RenderTransformOrigin="0.408,0.864" 
+                  ItemsSource="{Binding Path=SDKs}" 
+                  DisplayMemberPath="Name" 
+                  SelectedItem="{Binding CurrentSDK, Mode=TwoWay}"/>
+        <Button Content="Manage SDKs" HorizontalAlignment="Left" Margin="301,141,0,0" VerticalAlignment="Top" Width="89" Command="{Binding ManageSDKCommand}" />
+    </Grid>
+</UserControl>

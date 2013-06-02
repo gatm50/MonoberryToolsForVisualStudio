@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="MonoberryVSIX..adfd86b1-09a8-4fc0-b38a-c865890d0530" Version="1.0" Language="en-US" Publisher="Monoberry" />
+    <DisplayName>MonoberryToolsForVisualStudio</DisplayName>
+    <Description xml:space="preserve">Tools for Develop Monoberry Applications with Visual Studio</Description>
+    <License>License.txt</License>
+    <Icon>MonoberryLogo2.png</Icon>
+    <Tags>Monoberry, Tools, Project, Blackberry</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="MonoberryPackage" Path="|MonoberryPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="MonoberryProject" d:TargetPath="|MonoberryProject;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="MonoberryWizard" Path="|MonoberryWizard|" AssemblyName="|MonoberryWizard;AssemblyName|" />
+  </Assets>
+</PackageManifest>

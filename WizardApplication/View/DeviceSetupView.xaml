@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="WizardApplication.View.DeviceSetupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="300" Width="400">
+    <Grid>
+        <Button Content="Search Devices" HorizontalAlignment="Left" Margin="115,239,0,0" VerticalAlignment="Top" Width="99" Command="{Binding SearchDeviceCommand}" IsEnabled="False"/>
+        <ProgressBar HorizontalAlignment="Left" Height="20" Margin="10,270,0,0" VerticalAlignment="Top" Width="380"/>
+        <Image HorizontalAlignment="Left" Height="49" Margin="25,22,0,0" VerticalAlignment="Top" Width="63" Source="/WizardApplication;component/Images/device_simulator.png"/>
+        <Label Content="IP Address:" HorizontalAlignment="Left" Margin="104,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.132,0.462"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,76,0,0" Text="{Binding IPAddress, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="113" />
+        <Label Content="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="219,239,0,0" VerticalAlignment="Top" Height="26" Width="129" Background="#00000000" Foreground="#FFFB5454"/>
+        <DataGrid Name="DeviceItems" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding SelectedDevice, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Height="117" Width="380" ItemsSource="{Binding Devices, UpdateSourceTrigger=PropertyChanged}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name"
+                                    Binding="{Binding Name}"
+                                    MinWidth="110" />
+                <DataGridTextColumn Header="IP Address"
+                                    Binding="{Binding IPAddress}"
+                                    MinWidth="250" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add Device" HorizontalAlignment="Left" Margin="293,76,0,0" VerticalAlignment="Top" Width="97" Command="{Binding AddDeviceCommand}"/>
+        <Button Content="Remove Device" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="100" Command="{Binding RemoveDeviceCommand}" CommandParameter="{Binding ElementName=DeviceItems, Path=SelectedItem}"/>
+        <Label Content="Simulator" HorizontalAlignment="Left" Margin="104,11,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="104,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.132,0.462"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,45,0,0" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="113" />
+    </Grid>
+</UserControl>

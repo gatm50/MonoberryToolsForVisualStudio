@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+  <id>com.example.$safeprojectname$</id>
+  <name>$bundleName$</name>
+  <versionNumber>1.0.0</versionNumber>
+  <buildId>1</buildId>
+  <description>$bundleDescription$</description>
+  <author>$bundleAuthor$</author>
+  <authorId>$bundleAuthorId$</authorId>
+
+  <initialWindow>
+    <systemChrome>none</systemChrome>
+    <transparent>false</transparent>
+  </initialWindow>
+
+  <!-- We'll setup MonoBerry in app/native/monoberry -->
+  <!--  1. Tell the runtime, where the libs are -->
+  <env var="MONO_PATH" value="app/native/monoberry/lib" />
+  <env var="MONO_LOG_LEVEL" value="debug" />
+  <env var="LD_LIBRARY_PATH" value="app/native/lib"/>
+  
+  <!--  2. Include any needed libs -->
+  <!--  .NET 4.0 Compatible Assemblies -->
+  <asset path="$solutiondirectory$\packages\MonoRuntimeForMonoberry.0.1.0\Runtime\mscorlib.dll">monoberry/lib/mono/4.0/mscorlib.dll</asset>
+  <asset path="$solutiondirectory$\packages\MonoRuntimeForMonoberry.0.1.0\Runtime\System.dll">monoberry/lib/mono/4.0/System.dll</asset>
+  <asset path="$solutiondirectory$\packages\MonoRuntimeForMonoberry.0.1.0\Runtime\System.Drawing.dll">monoberry/lib/mono/4.0/System.Drawing.dll</asset>
+  <asset path="$solutiondirectory$\packages\MonoRuntimeForMonoberry.0.1.0\Runtime\System.Xml.dll">monoberry/lib/mono/4.0/System.Xml.dll</asset>
+  
+  <!--  3. Include the (platform dependent) runtime and use it as entry point -->
+  <asset path="$solutiondirectory$\packages\MonoRuntimeForMonoberry.0.1.0\Runtime\mono" entry="true" type="Qnx/Elf">monoberry/bin/mono</asset>
+ 
+  <!--  4. Include our own (platform independent) code -->
+  <asset path="bin/Debug">bin</asset>
+  
+  <!--  5. Tell the Mono runtime to run our code. -->
+  <arg>app/native/bin/$safeprojectname$.exe</arg>
+
+  <asset path="Resources/ApplicationIcon.png">icon.png</asset>
+  <icon>
+    <image>icon.png</image>
+  </icon>
+
+  <!--  The splash screen that will appear when your application is launching. Should be 1024x600. -->
+  <!-- <splashscreen></splashscreen> -->
+
+  <!-- Request permission to execute native code.  Required for native applications. -->
+  <action system="true">run_native</action>
+
+  <!--  The permissions requested by your application. -->
+</qnx>

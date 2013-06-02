@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Monoberry Application</Name>
+    <Description>A project for creating a Monoberry Application</Description>
+    <Icon>MonoberryProject.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <SortOrder>1000</SortOrder>
+    <TemplateID>cb028e52-7a1c-4f8c-bab8-f21cd1f6c0e2</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>MonoberryApplication</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Resources\ApplicationIcon.png">ApplicationIcon.png</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="PackagerScripts\Monoberry_Builder.ps1">Monoberry_Builder.ps1</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="PackagerScripts\Monoberry_Launcher.ps1">Monoberry_Launcher.ps1</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="monoberry-descriptor.xml">monoberry-descriptor.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">Cube.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">Program.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>MonoberryWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=d2206261acff3413</Assembly>
+    <FullClassName>MonoberryWizard.Wizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

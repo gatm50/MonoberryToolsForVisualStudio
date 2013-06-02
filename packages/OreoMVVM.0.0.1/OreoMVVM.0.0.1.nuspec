@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>OreoMVVM</id>
+    <version>0.0.1</version>
+    <title>Oreo MVVM</title>
+    <authors>Gustavo Torrico</authors>
+    <owners>Gustavo Torrico</owners>
+    <licenseUrl>https://raw.github.com/gatm50/OreoMvvm/master/README.md</licenseUrl>
+    <projectUrl>https://github.com/gatm50/OreoMvvm</projectUrl>
+    <iconUrl>https://raw.github.com/gatm50/OreoMvvm/master/LogoOreoMVVM.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple and Lightweight MVVM Toolkit for WPF</description>
+    <copyright>2013</copyright>
+    <tags>MVVM, WPF</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="WindowsBase" targetFramework="" />
+      <frameworkAssembly assemblyName="PresentationFramework" targetFramework="" />
+      <frameworkAssembly assemblyName="PresentationCore" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Xaml" targetFramework="" />
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="OreoMvvm.dll" />
+    </references>
+  </metadata>
+</package>
